@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stream markers</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div id="settingsIcon" class="settings-icon">
+        <img src="settings.svg" alt="Paramètres" id="settingsSvg">
+        <img src="close.svg" alt="Fermer" id="closeSvg">
+    </div>
+
+    <button id="addMarkerButton">
+        <img src="heart.svg" alt="Coeur">
+    </button>
+
+
+    <div id="settingsPopup" class="popup">
+        <form id="obsForm">
+            <!-- <label for="port">Port</label> -->
+            <!-- <label for="password">Mot de passe</label> -->
+            <div id="container-input">
+                <input type="number" id="port" name="port" placeholder="4455" required>
+                <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+            </div>
+
+            <br>
+            <button type="submit" class="submit-button">Valider</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<style>
+    body {
+        max-width: 100vw;
+        height: 100vh;
+
+        background-color: #0000F4;
+        color: white;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button {
+        width: 70vw;
+        height: 70vh;
+
+        background-color: white;
+        border: 20px solid #4545F5;
+        border-radius: 10px;
+    }
+
+    button:hover {
+        opacity: 90%;
+        cursor: pointer;
+    }
+
+    .settings-icon {
+        position: fixed;
+        top: 3%;
+        right: 3%;
+
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    #closeSvg {
+        display: none;
+    }
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background-color: #F2FAE9;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    .popup form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 70vw;
+        height: 70vh;
+
+        /* background-color: #F2FAE9; */
+        color: black;
+    }
+
+    #container-input {
+        height: 15%;
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2%;
+
+        margin-bottom: 2%;
+    }
+
+    .popup form input[type="number"],
+    .popup form input[type="password"] {
+        -moz-appearance: textfield;
+
+        border: none;
+        background-color: white;
+        border-radius: 10px;
+        padding-left: 1%;
+    }
+
+    button.submit-button {
+        width: 100%;
+        height: 30%;
+        background-color: #DAE9C7;
+        border-color: #DAE9C7;
+    }
+</style>
